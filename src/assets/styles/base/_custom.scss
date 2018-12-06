@@ -1,0 +1,8 @@
+@import 'theme';
+@import 'typography.scss';
+
+
+body {
+  background-color: theme-color('primary');
+  font-family: $Montserrat;
+}

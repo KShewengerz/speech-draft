@@ -1,10 +1,12 @@
-import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import { PageNotFoundComponent } from '@app/page-not-found/page-not-found.component';
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+
+const routes: Routes = [
+  { path: '', loadChildren: './login/login.module#LoginModule' },
+  { path: 'speech', loadChildren: './speech/speech.module#SpeechModule' },
+  { path: '**', component: PageNotFoundComponent }
+];
+
+export const AppRouting = RouterModule.forRoot(routes, { useHash: false });

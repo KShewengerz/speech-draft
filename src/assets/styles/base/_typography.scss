@@ -1,0 +1,14 @@
+$sans-serif: sans-serif;
+$Montserrat: Montserrat, #{$sans-serif};
+$Montserrat-Bold: Montserrat-Regular, #{$sans-serif};
+
+
+@mixin font-face($name, $path, $format) {
+  @font-face {
+    font-family: $name;
+    src: url("#{$path}") format("#{$format}");
+  }
+}
+
+@include font-face('Montserrat', '/assets/fonts/Montserrat-Light.ttf', 'truetype');
+@include font-face('Montserrat-Regular', '/assets/fonts/Montserrat-Regular.ttf', 'truetype');
