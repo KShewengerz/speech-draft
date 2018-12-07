@@ -1,0 +1,74 @@
+@import 'main';
+
+$breakpoint-650: 650px;
+
+/* CONTAINER */
+.container {
+  @include min-media($breakpoint-650) {
+    &, .row { height: 100% !important; }
+  }
+
+  @include max-media($breakpoint-650) {
+    &, .row { height: 50% !important; }
+
+    & {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+/* BOX */
+.box {
+  @include max-media(991px) {
+    & {
+      flex: 0 0 50% !important;
+      max-width: 50% !important;
+    }
+  }
+
+  @include max-media($breakpoint-650) {
+    & {
+      flex: unset !important;
+      max-width: 100% !important;
+
+      h3 { font-size: 1.5rem; }
+
+      p { font-size: 0.8rem; }
+
+      &:first-child { height: 250px !important; }
+      &:last-child { height: 400px !important; }
+    }
+  }
+
+  &:first-child {
+    background-image: linear-gradient(rgba(249, 71, 84, 0.75), rgba(249, 71, 84, 0.85)),
+    url('../../../../assets/images/draft-bg.jpg');
+    height: 500px;
+    background-size: cover;
+    background-position: unset;
+  }
+
+  &:last-child { height: 470px; }
+}
+
+/* LOGIN */
+#logo {
+  %position-relative { position: relative; }
+
+  fa {
+    @extend %position-relative;
+
+    top: 7px;
+  }
+
+  h4 {
+    @extend %position-relative;
+
+    padding-left: 15px;
+    top: 8px;
+  }
+}
+
+

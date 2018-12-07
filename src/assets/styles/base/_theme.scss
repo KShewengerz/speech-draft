@@ -1,9 +1,8 @@
-$body-bg: #419cf5;
-$body-color: white;
+$body-color: #525a6b;
 
 $theme-colors: (
-  "primary": #419cf5,
-  "danger": #f7655e
+  "primary": #F94754,
+  "gray": #F2F1F1
 );
 
 @import "~node_modules/bootstrap/scss/bootstrap";

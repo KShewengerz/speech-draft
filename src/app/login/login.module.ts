@@ -1,8 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+
+// Modules
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 
 import { LoginComponent } from '@app/login/containers/login/login.component';
-import { FormComponent } from '@app/login/components/form/form.component';
+import { LoginFormComponent } from '@app/login/components/login-form/login-form.component';
 
 import { LoginRouting } from '@app/login/login-routing.module';
 
@@ -10,10 +16,14 @@ import { LoginRouting } from '@app/login/login-routing.module';
 @NgModule({
   declarations: [
     LoginComponent,
-    FormComponent
+    LoginFormComponent
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
+    FormlyModule.forRoot(),
+    FormlyBootstrapModule,
+    AngularFontAwesomeModule,
     LoginRouting
   ]
 })
