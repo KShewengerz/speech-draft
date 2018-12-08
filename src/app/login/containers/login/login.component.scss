@@ -48,6 +48,8 @@ $breakpoint-650: 650px;
     height: 500px;
     background-size: cover;
     background-position: unset;
+    box-shadow: 1px 2px 20px 0 rgba(0, 0, 0, 0.37) !important;
+    z-index: 1;
   }
 
   &:last-child { height: 470px; }
