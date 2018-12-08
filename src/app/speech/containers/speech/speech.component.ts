@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Tab } from '@app/speech/containers/speech/speech.interface';
-
-import { tabs } from '@app/speech/containers/speech/speech.data';
+import { Tab, tabs } from '@app/speech/containers/speech/speech.data';
 
 
 @Component({

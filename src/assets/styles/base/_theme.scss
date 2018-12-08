@@ -1,5 +1,6 @@
 @import 'colors';
 
+/* Theme */
 $body-color: #525a6b;
 
 $theme-colors: (
@@ -7,4 +8,13 @@ $theme-colors: (
   "gray": $gray
 );
 
-@import "~node_modules/bootstrap/scss/bootstrap";
+@import '~node_modules/bootstrap/scss/bootstrap';
+@import '~node_modules/ngx-bootstrap/datepicker/bs-datepicker.scss';
+
+
+/* Datepicker */
+.theme-red {
+  $dp: bs-datepicker;
+
+  .#{$dp}-head, .#{$dp}-body table td span.selected { background-color: $primary; }
+}

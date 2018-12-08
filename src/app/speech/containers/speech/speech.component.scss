@@ -1,11 +1,11 @@
 @import 'main';
 
-$breakpoint-767: 767px;
+$breakpoint-991: 991px;
 
 
 /* BORDER */
 .red-bg-border {
-  @include max-media($breakpoint-767) {
+  @include max-media($breakpoint-991) {
     & { height: 100vh !important; }
   }
 
@@ -15,10 +15,13 @@ $breakpoint-767: 767px;
 
 /* BOX */
 .box {
-  @include max-media($breakpoint-767) {
-    & { border-radius: 0 !important; }
+  @include max-media($breakpoint-991) {
+    & {
+      border-radius: 0 !important;
+      height: auto !important;
+    }
   }
 
-  height: 550px;
+  height: 600px;
   padding: 30px;
 }

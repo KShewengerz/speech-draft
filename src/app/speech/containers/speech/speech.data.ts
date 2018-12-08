@@ -1,5 +1,9 @@
-import { Tab } from '@app/speech/containers/speech/speech.interface';
-
+export interface Tab {
+  label: string;
+  icon: string;
+  url: string;
+  active: boolean;
+}
 
 export const tabs: Tab[] = [
   { label: 'View Speeches', icon: 'eye', url: 'view-speech', active: true },

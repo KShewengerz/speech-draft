@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { SpeechService } from '@app/speech/speech.service';
+import { Speech } from '@app/speech/models/speech.interface';
+
 
 @Component({
   selector    : 'app-view-speech',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls   : ['./view-speech.component.scss']
 })
 export class ViewSpeechComponent implements OnInit {
+  
+  speeches: Speech[];
+  selectedSpeech: Speech;
 
-  constructor() { }
+  constructor(private speechService: SpeechService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.loadSpeeches();
+  }
+  
+  loadSpeeches(): void {
+    this.speechService
+      .fetchSpeeches()
+      .subscribe(speeches => {
+        this.speeches = speeches;
+        this.selectedSpeech = speeches[0];
+      });
+  }
 
 }

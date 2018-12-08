@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // Modules
-import { TabsModule } from 'ngx-bootstrap';
+import { TabsModule, BsDatepickerModule, CarouselModule } from 'ngx-bootstrap';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { SpeechRouting } from '@app/speech/speech-routing.module';
 
@@ -34,6 +34,7 @@ import { SpeechSubFieldsComponent } from '@app/speech/components/speech-sub-fiel
   imports: [
     CommonModule,
     TabsModule.forRoot(),
+    BsDatepickerModule.forRoot(),
     AngularFontAwesomeModule,
     SpeechRouting
   ]

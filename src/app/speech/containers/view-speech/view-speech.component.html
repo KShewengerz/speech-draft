@@ -1,3 +1,26 @@
-<p>
-  view-speech works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- SPEECH LIST -->
+    <div class="col-lg-4 col-md-12 tabs">
+      <ul>
+        <li *ngFor="let speech of speeches"
+            class="cursor-pointer"
+            [class.active]="speech === selectedSpeech"
+            (click)="selectedSpeech = speech">{{ speech.title }}</li>
+      </ul>
+
+      <select class="custom-select form-control mb-4">
+        <option value=""></option>
+        <option *ngFor="let speech of speeches"
+                [value]="speech.id">{{ speech.title }}</option>
+      </select>
+    </div>
+
+    <!-- SPEECH FORM -->
+    <div class="col-lg-8 col-md-12">
+      <app-speech-form [speech]="selectedSpeech"></app-speech-form>
+    </div>
+
+  </div>
+</div>

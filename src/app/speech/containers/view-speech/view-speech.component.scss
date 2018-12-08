@@ -1,0 +1,33 @@
+@import 'main';
+
+
+/* TABS */
+.tabs {
+  padding: 0 30px;
+
+  select {
+    @include max-media(991px) {
+      & { display: block !important; }
+    }
+
+    display: none;
+  }
+
+  ul {
+    @include max-media(991px) {
+      & { display: none; }
+    }
+  }
+
+  li { padding: 10px; }
+
+  li.active {
+    $base: #ffefef;
+
+    color: color-yiq($base);
+    font-weight: bold;
+    background: $base;
+  }
+}
+
+

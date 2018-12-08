@@ -1,0 +1,43 @@
+@import 'main';
+
+
+/* CONTAINER */
+$breakpoint-991: 991px;
+
+.container {
+  @include max-media($breakpoint-991) {
+    &, .col-md-12 { padding: 0; }
+  }
+}
+
+/* INPUT */
+input { font-size: 10px !important; }
+
+textarea.form-control { padding: 20px; }
+
+/* BUTTONS */
+.buttons {
+  @include max-media(425px) {
+    & { text-align: center !important; }
+  }
+
+  button {
+    @include max-media(425px) {
+      & { width: 70px !important; }
+
+      fa { display: block !important; }
+
+      span { display: none; }
+    }
+
+    fa { display: none; }
+
+    &:nth-child(1) {
+      border: 1px solid $primary;
+      background: unset;
+      color: $primary;
+      font-weight: bold;
+    }
+  }
+}
+
