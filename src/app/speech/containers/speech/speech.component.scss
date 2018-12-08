@@ -1,0 +1,24 @@
+@import 'main';
+
+$breakpoint-767: 767px;
+
+
+/* BORDER */
+.red-bg-border {
+  @include max-media($breakpoint-767) {
+    & { height: 100vh !important; }
+  }
+
+  background-color: $primary;
+  height: 400px;
+}
+
+/* BOX */
+.box {
+  @include max-media($breakpoint-767) {
+    & { border-radius: 0 !important; }
+  }
+
+  height: 550px;
+  padding: 30px;
+}

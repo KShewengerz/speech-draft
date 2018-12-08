@@ -1,8 +1,10 @@
+@import 'colors';
+
 $body-color: #525a6b;
 
 $theme-colors: (
-  "primary": #F94754,
-  "gray": #F2F1F1
+  "primary": $primary,
+  "gray": $gray
 );
 
 @import "~node_modules/bootstrap/scss/bootstrap";

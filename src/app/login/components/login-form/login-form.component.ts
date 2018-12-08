@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormGroup } from '@angular/forms';
 
 import { FormlyFieldConfig } from '@ngx-formly/core';
@@ -20,12 +21,12 @@ export class LoginFormComponent implements OnInit {
   fields: FormlyFieldConfig[] = loginFormFields;
   model: Credentials = { username: 'admin', password: 'admin' };
   
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {}
   
   submitForm(credentials: Credentials): void {
-  
+    this.router.navigate(['speech']);
   }
 
 }

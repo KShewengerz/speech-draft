@@ -37,8 +37,17 @@ $breakpoint-650: 650px;
 
       p { font-size: 0.8rem; }
 
-      &:first-child { height: 250px !important; }
-      &:last-child { height: 400px !important; }
+      &:first-child {
+        height: 250px !important;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      &:last-child {
+        margin-left: 0 !important;
+        height: 400px !important;
+        margin-top: -25px;
+      }
     }
   }
 
@@ -52,7 +61,10 @@ $breakpoint-650: 650px;
     z-index: 1;
   }
 
-  &:last-child { height: 470px; }
+  &:last-child {
+    height: 470px;
+    margin-left: -10px;
+  }
 }
 
 /* LOGIN */

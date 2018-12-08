@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { SpeechRouting } from '@app/speech/speech-routing.module';
 
 // Containers
+import { SpeechComponent } from '@app/speech/containers/speech/speech.component';
 import { ViewSpeechComponent } from '@app/speech/containers/view-speech/view-speech.component';
 import { SubmitSpeechComponent } from '@app/speech/containers/submit-speech/submit-speech.component';
 import { SearchSpeechComponent } from '@app/speech/containers/search-speech/search-speech.component';
@@ -19,6 +20,7 @@ import { SpeechSubFieldsComponent } from '@app/speech/components/speech-sub-fiel
 @NgModule({
   declarations: [
     // Containers
+    SpeechComponent,
     ViewSpeechComponent,
     SubmitSpeechComponent,
     SearchSpeechComponent,
