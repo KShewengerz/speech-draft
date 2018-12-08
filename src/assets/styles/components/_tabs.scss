@@ -1,36 +1,24 @@
-@media screen and (max-width: 767px) {
-  .container { max-width: 100%; }
+@import '../base/colors';
+@import '../utils/mixins';
 
-  .nav-link > span { display: none; }
 
-  .nav-link fa { font-size: 20px; }
+/* TABS */
+.nav-tabs {
+  .nav-link {
+    @include max-media(853px) {
+      fa {
+        font-size: 1.2rem;
+        & + span { display: none; }
+      }
+    }
 
-  .container.large .content {
-    width: 600px;
-    max-width: 100%;
+    color: #808080cf;
+    border: none;
+    font-size: 0.9rem;
+
+    &.active {
+      font-weight: bold;
+      border-bottom: 2px solid $primary;
+    }
   }
 }
-
-@media screen and (max-width: 425px) {
-  .bg-wrapper .row { margin: 0 !important; }
-
-  .bg-wrapper .container { padding: 0 !important; }
-
-  .bg-wrapper .row > .content { padding: 30px !important; }
-}
-
-.nav-tabs .nav-link.active {
-  font-weight: bold;
-  border-bottom: 2px solid #123456;
-}
-
-.nav-link.active fa {
-  color: #123456;
-  cursor: pointer;
-}
-
-.nav-tabs .nav-link { border: none; }
-
-.nav-link:not(.active) > span, .nav-link fa { color: gray; }
-
-.nav-link > span { font-size: 14px; }

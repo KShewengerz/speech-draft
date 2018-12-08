@@ -1,16 +1,29 @@
 <div class="container-fluid px-0">
-
   <div class="red-bg-border">
-
-    <!-- CONTENT -->
     <div class="row d-flex align-items-center height-vh-100">
 
       <div class="col-md-8 offset-md-2 box bg-white">
-        <router-outlet></router-outlet>
+
+        <!-- TABS -->
+        <tabset [justified]="true">
+          <tab *ngFor="let tab of speechTabs"
+               [active]="tab.active"
+               (select)="router.navigate(['speech', tab.url])">
+            <ng-template tabHeading>
+              <fa class="pr-2 cursor-pointer"
+                  [name]="tab.icon"></fa>
+              <span>{{ tab.label  }}</span>
+            </ng-template>
+          </tab>
+        </tabset>
+
+        <!-- CONTENT -->
+        <div class="content py-5">
+          <router-outlet></router-outlet>
+        </div><!-- END .content -->
+
       </div><!-- END .box -->
 
     </div><!-- END .row -->
-
   </div><!-- END .red-bg-border -->
-
 </div><!-- END .container-fluid -->

@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // Modules
+import { TabsModule } from 'ngx-bootstrap';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { SpeechRouting } from '@app/speech/speech-routing.module';
 
 // Containers
@@ -31,6 +33,8 @@ import { SpeechSubFieldsComponent } from '@app/speech/components/speech-sub-fiel
   ],
   imports: [
     CommonModule,
+    TabsModule.forRoot(),
+    AngularFontAwesomeModule,
     SpeechRouting
   ]
 })
