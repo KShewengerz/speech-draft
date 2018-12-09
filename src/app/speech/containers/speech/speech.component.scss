@@ -13,6 +13,19 @@
 
 }
 
+/* LOGO */
+.logo {
+  @include max-media(767px) {
+    & { display: none !important; }
+  }
+
+  padding: 20px 30px;
+
+  fa { font-size: 11px; }
+
+  h6 { top: 1px; }
+}
+
 $breakpoint-991: 991px;
 
 /* BORDER */
