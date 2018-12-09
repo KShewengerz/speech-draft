@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 import { SpeechService } from '@app/speech/speech.service';
 import { Speech } from '@app/speech/models/speech.interface';
@@ -11,12 +12,15 @@ import { Speech } from '@app/speech/models/speech.interface';
 })
 export class SearchSpeechComponent implements OnInit {
   
+  form: FormGroup = this.fb.group({ author: '', keywords: '', date: new Date() });
+  
   keys: Object = Object.keys;
   speeches: Speech[];
   
   icons: string[] = ['trash', 'file', 'share'];
   
-  constructor(private speechService: SpeechService) { }
+  constructor(private fb: FormBuilder,
+              private speechService: SpeechService) { }
   
   ngOnInit() {
     this.loadSpeeches();
