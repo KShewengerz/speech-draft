@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Modules
 import { TabsModule, BsDatepickerModule, CarouselModule } from 'ngx-bootstrap';
@@ -31,6 +32,8 @@ import { SpeechSubFieldsComponent } from '@app/speech/components/speech-sub-fiel
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     TabsModule.forRoot(),
     BsDatepickerModule.forRoot(),
     AngularFontAwesomeModule,

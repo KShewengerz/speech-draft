@@ -1,14 +1,17 @@
 <div class="container-fluid">
-  <form novalidate>
+  <form novalidate
+        [formGroup]="form">
 
     <div class="row">
       <div class="col-md-12 mb-3">
         <textarea class="form-control"
                   cols="30"
-                  rows="10"></textarea>
+                  rows="10"
+                  formControlName="content"></textarea>
       </div><!-- END .col-md-12 -->
 
-      <app-speech-sub-fields></app-speech-sub-fields>
+      <!-- SPEECH FORM SUB FIELDS -->
+      <app-speech-sub-fields [form]="form"></app-speech-sub-fields>
 
       <!-- BUTTONS -->
       <div class="col-md-12 text-right mt-5 buttons">

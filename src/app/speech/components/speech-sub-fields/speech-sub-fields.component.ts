@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 import { BsDatepickerConfig } from 'ngx-bootstrap';
 
@@ -11,6 +12,8 @@ import { BsDatepickerConfig } from 'ngx-bootstrap';
 export class SpeechSubFieldsComponent implements OnInit {
   
   datepickerConfig: Partial<BsDatepickerConfig> = new BsDatepickerConfig();
+  
+  @Input() form: FormGroup;
   
   constructor() { }
 
