@@ -15,6 +15,13 @@ export class SpeechComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.setActiveTabByCurrentUrl();
+  }
+  
+  setActiveTabByCurrentUrl(): void {
+    const currentUrl = this.router.url.split('/')[2];
+    this.speechTabs.forEach(speech => speech.url === currentUrl ? (speech.active = true) : speech);
+  }
 
 }
