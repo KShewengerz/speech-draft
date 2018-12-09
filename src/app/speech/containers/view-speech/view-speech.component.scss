@@ -1,6 +1,19 @@
 @import 'main';
 
 
+/* EMPTY MESSAGE */
+.empty-message {
+  height: 40vh;
+
+  span:first-child { font-size: 16px; }
+
+  span:last-child {
+    font-size: 15px;
+    position: relative;
+    top: -20px;
+  }
+}
+
 /* TABS */
 .tabs {
   padding: 0 17px;

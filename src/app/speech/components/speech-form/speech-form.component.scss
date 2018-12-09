@@ -30,12 +30,20 @@ $breakpoint-991: 991px;
 
     fa { display: none; }
 
-    &:nth-child(1) {
+    &.btn-delete {
       border: 1px solid $primary;
       background: unset;
       color: $primary;
       font-weight: bold;
     }
   }
+}
+
+/* MODAL */
+::ng-deep .modal-content {
+  border-radius: 10px;
+  border: 0;
+
+  .modal-body { padding: 2.5rem; }
 }
 

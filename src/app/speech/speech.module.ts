@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Modules
-import { TabsModule, BsDatepickerModule, CarouselModule } from 'ngx-bootstrap';
+import { TabsModule, BsDatepickerModule, ModalModule } from 'ngx-bootstrap';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { SpeechRouting } from '@app/speech/speech-routing.module';
 
@@ -36,6 +36,7 @@ import { SpeechSubFieldsComponent } from '@app/speech/components/speech-sub-fiel
     ReactiveFormsModule,
     TabsModule.forRoot(),
     BsDatepickerModule.forRoot(),
+    ModalModule.forRoot(),
     AngularFontAwesomeModule,
     SpeechRouting
   ]

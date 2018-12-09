@@ -1,17 +1,27 @@
 <div class="container-fluid">
-  <div class="row">
+
+  <p *ngIf="!speeches?.length"
+     class="d-flex justify-content-center align-items-center flex-column empty-message text-secondary">
+    <span>No speeches created yet.</span>&nbsp;
+    <span class="text-center">Go to
+      <strong class="text-primary cursor-pointer"
+              [routerLink]="['../submit-speech']">Submit a speech</strong>&nbsp; to create one.
+    </span>
+  </p>
+
+  <div *ngIf="speeches?.length"
+       class="row">
 
     <!-- SPEECH LIST -->
     <div class="col-lg-4 col-md-12 tabs">
       <ul>
-        <li *ngFor="let speech of speeches"
+        <li *ngFor="let speech of speeches; let i = index;"
             class="cursor-pointer"
             [class.active]="speech === selectedSpeech"
             (click)="selectedSpeech = speech">{{ speech.title }}</li>
       </ul>
 
       <select class="custom-select form-control mb-4">
-        <option value=""></option>
         <option *ngFor="let speech of speeches"
                 [value]="speech.id">{{ speech.title }}</option>
       </select>
@@ -19,7 +29,9 @@
 
     <!-- SPEECH FORM -->
     <div class="col-lg-8 col-md-12">
-      <app-speech-form [data]="selectedSpeech"></app-speech-form>
+      <app-speech-form [speeches]="speeches"
+                       [data]="selectedSpeech"
+                       (deleteSpeech)="onSpeechDelete($event)"></app-speech-form>
     </div><!-- END .col-lg-8 col-md-12 -->
 
   </div><!-- END .row -->

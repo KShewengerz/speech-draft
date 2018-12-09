@@ -15,17 +15,23 @@
 
       <!-- BUTTONS -->
       <div class="col-md-12 text-right mt-5 buttons">
-        <button class="btn mr-2">
+        <!-- DELETE -->
+        <button *ngIf="speeches?.length"
+                class="btn btn-delete mr-2"
+                (click)="openModal(delete)">
           <span>Delete</span>
           <fa name="trash"></fa>
         </button>
 
+        <!-- SAVE -->
         <button class="btn btn-primary mr-2">
           <span>Save</span>
           <fa name="save"></fa>
         </button>
 
-        <button class="btn btn-primary">
+        <!-- SHARE -->
+        <button *ngIf="speeches?.length"
+                class="btn btn-primary">
           <span>Share</span>
           <fa name="share"></fa>
         </button>
@@ -35,3 +41,18 @@
 
   </form>
 </div><!-- END .container -->
+
+<!-- DELETE MODAL -->
+<ng-template #delete>
+  <div class="modal-body text-center">
+    <p>Do you want to delete <strong>{{speech?.title}}</strong> ?</p>
+
+    <button type="button"
+            class="btn btn-default mr-3"
+            (click)="modalRef.hide()">No</button>
+
+    <button type="button"
+            class="btn btn-primary"
+            (click)="onDeleteSpeech(speech.id)">Yes</button>
+  </div>
+</ng-template>

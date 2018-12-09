@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { SpeechService } from '@app/speech/speech.service';
 import { Speech } from '@app/speech/models/speech.interface';
@@ -14,7 +15,8 @@ export class ViewSpeechComponent implements OnInit {
   speeches: Speech[];
   selectedSpeech: Speech;
 
-  constructor(private speechService: SpeechService) { }
+  constructor(private router: Router,
+              private speechService: SpeechService) { }
 
   ngOnInit() {
     this.loadSpeeches();
@@ -27,6 +29,12 @@ export class ViewSpeechComponent implements OnInit {
         this.speeches = speeches;
         this.selectedSpeech = speeches[0];
       });
+  }
+  
+  onSpeechDelete(id: number): void {
+    this.speechService
+      .deleteSpeech(id)
+      .subscribe(() => this.selectedSpeech = this.speeches[0]);
   }
 
 }

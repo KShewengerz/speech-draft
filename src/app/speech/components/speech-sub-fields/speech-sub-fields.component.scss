@@ -3,6 +3,9 @@
 :host { width: 100%; }
 
 /* INPUT */
-input { font-size: 12px !important; }
+input {
+  font-size: 12px !important;
+  color: black;
+}
 
 textarea.form-control { padding: 20px; }
