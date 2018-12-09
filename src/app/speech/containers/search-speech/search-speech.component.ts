@@ -14,7 +14,7 @@ export class SearchSpeechComponent implements OnInit {
   
   form: FormGroup = this.fb.group({ author: '', keywords: '', date: new Date() });
   
-  keys: Object = Object.keys;
+  speechKeys: string[] = ['id', 'title', 'author', 'keywords', 'date', ''];
   speeches: Speech[];
   
   icons: string[] = ['trash', 'file', 'share'];
