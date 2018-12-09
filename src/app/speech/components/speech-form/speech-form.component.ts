@@ -1,9 +1,10 @@
-import { Component, Input, OnChanges, Output, EventEmitter, TemplateRef } from '@angular/core';
+import { Component, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 import { Speech } from '@app/speech/models/speech.interface';
+import { ModalService } from '@app/speech/components/speech-form/modal/modal.service';
 
 
 @Component({
@@ -30,12 +31,13 @@ export class SpeechFormComponent implements OnChanges {
     return this.speech;
   }
   
-  @Output()
-  deleteSpeech: EventEmitter<number> = new EventEmitter<number>();
+  @Output() deleteSpeech: EventEmitter<number> = new EventEmitter<number>();
+  @Output() saveSpeech: EventEmitter<Speech> = new EventEmitter<Speech>();
   
   constructor(private fb: FormBuilder,
-              private modalService: BsModalService) { }
-  
+              private bsModalService: BsModalService,
+              private modalService: ModalService) { }
+              
   ngOnChanges(): void {
     if (this.speech) this.setFormValues();
   }
@@ -56,13 +58,21 @@ export class SpeechFormComponent implements OnChanges {
      this.form.setValue({ content, author, keywords, date });
   }
   
-  openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template, { class: 'modal-md modal-dialog-centered' });
+  openModal(type: string) {
+    const template = this.modalService.templates.get(type);
+    this.modalRef = this.bsModalService.show(template, { class: 'modal-md modal-dialog-centered' });
   }
   
   onDeleteSpeech(id: number): void {
-    this.deleteSpeech.emit(id);
-    this.modalRef.hide();
+     this.deleteSpeech.emit(id);
+     this.modalRef.hide();
+  }
+  
+  onSaveSpeech(body: Speech): void {
+    body.id    = this.speech ? this.speech.id : this.speeches[this.speeches.length - 1].id + 1;
+    body.title = this.speech ? this.speech.title : `Speech ${body.id}`;
+    
+    this.saveSpeech.emit(body);
   }
   
 }

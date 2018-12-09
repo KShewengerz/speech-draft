@@ -16,6 +16,7 @@ import { SearchSpeechComponent } from '@app/speech/containers/search-speech/sear
 // Components
 import { SpeechFormComponent } from '@app/speech/components/speech-form/speech-form.component';
 import { SpeechSubFieldsComponent } from '@app/speech/components/speech-sub-fields/speech-sub-fields.component';
+import { ModalTemplateComponent } from '@app/speech/components/speech-form/modal/modal-template.component';
 
 
 
@@ -28,7 +29,8 @@ import { SpeechSubFieldsComponent } from '@app/speech/components/speech-sub-fiel
     SearchSpeechComponent,
     // Components
     SpeechFormComponent,
-    SpeechSubFieldsComponent
+    SpeechSubFieldsComponent,
+    ModalTemplateComponent
   ],
   imports: [
     CommonModule,

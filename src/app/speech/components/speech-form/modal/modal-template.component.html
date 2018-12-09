@@ -1,0 +1,44 @@
+<!-- DELETE MODAL -->
+<ng-template #delete>
+  <div class="modal-body text-center">
+    <p>Are you sure you want to delete <strong class="text-primary">{{speech?.title}}</strong> ?</p>
+
+    <button type="button"
+            class="btn btn-default mr-3"
+            (click)="modalRef.hide()">No</button>
+
+    <button type="button"
+            class="btn btn-primary"
+            (click)="onDeleteSpeech(speech.id)">Yes</button>
+  </div><!-- END .modal-body -->
+</ng-template>
+
+<!-- SHARE MODAL -->
+<ng-template #share>
+  <div class="modal-body text-center">
+    <p>Share <strong class="text-primary">{{speech?.title}}</strong> to your teammate:</p>
+
+    <div class="form-group mb-4">
+      <input type="email"
+             class="form-control"
+             placeholder="Email Address"
+             required
+             #email="ngModel"
+             [(ngModel)]="emailAddress">
+
+      <small class="text-danger"
+             *ngIf="email.dirty && email.errors?.required">
+        <i>Email is required</i>
+      </small>
+    </div><!-- END .form-group -->
+
+    <button type="button"
+            class="btn btn-default mr-3"
+            (click)="modalRef.hide()">Cancel</button>
+
+    <button type="button"
+            class="btn btn-primary"
+            [disabled]="email.errors?.required"
+            (click)="onShareSpeech(speech.id, emailAddress)">Share</button>
+  </div><!-- END .modal-body -->
+</ng-template>

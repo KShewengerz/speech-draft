@@ -31,7 +31,8 @@
     <div class="col-lg-8 col-md-12">
       <app-speech-form [speeches]="speeches"
                        [data]="selectedSpeech"
-                       (deleteSpeech)="onSpeechDelete($event)"></app-speech-form>
+                       (deleteSpeech)="onSpeechDelete($event)"
+                       (saveSpeech)="onSaveSpeech($event)"></app-speech-form>
     </div><!-- END .col-lg-8 col-md-12 -->
 
   </div><!-- END .row -->

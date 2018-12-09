@@ -1,3 +1,14 @@
 <div class="container">
-  <app-speech-form></app-speech-form>
+  <app-speech-form [speeches]="speeches"
+                   (saveSpeech)="onSaveSpeech($event)"></app-speech-form>
 </div>
+
+<ng-template #success>
+  <div class="modal-body text-center">
+    <p class="my-0">
+      <fa name="check"
+          class="text-success"></fa>&nbsp;
+      <strong>Successfully Saved!</strong>
+    </p>
+  </div><!-- END .modal-body -->
+</ng-template>

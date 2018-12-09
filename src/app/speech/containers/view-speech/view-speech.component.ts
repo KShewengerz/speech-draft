@@ -36,5 +36,11 @@ export class ViewSpeechComponent implements OnInit {
       .deleteSpeech(id)
       .subscribe(() => this.selectedSpeech = this.speeches[0]);
   }
+  
+  onSaveSpeech(speech: Speech): void {
+    this.speechService
+      .saveSpeech(speech)
+      .subscribe(isAdd => isAdd ? this.selectedSpeech = this.speeches[this.speeches.length - 1] : null);
+  }
 
 }
