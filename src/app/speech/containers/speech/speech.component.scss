@@ -1,7 +1,19 @@
 @import 'main';
 
-$breakpoint-991: 991px;
 
+/* CONTAINER */
+.container-fluid {
+  @include max-media(425px) {
+    .red-bg-border { background-color: white !important; }
+
+    .height-vh-100 { height: auto !important; }
+
+    .box { box-shadow: unset; }
+  }
+
+}
+
+$breakpoint-991: 991px;
 
 /* BORDER */
 .red-bg-border {
@@ -10,7 +22,7 @@ $breakpoint-991: 991px;
   }
 
   background-color: $primary;
-  height: 400px;
+  height: 45vh;
 }
 
 /* BOX */

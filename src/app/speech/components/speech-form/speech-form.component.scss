@@ -4,9 +4,9 @@
 /* CONTAINER */
 $breakpoint-991: 991px;
 
-.container {
+.container-fluid {
   @include max-media($breakpoint-991) {
-    &, .col-md-12 { padding: 0; }
+    & { padding: 0; }
   }
 }
 
@@ -17,13 +17,15 @@ textarea.form-control { padding: 20px; }
 
 /* BUTTONS */
 .buttons {
-  @include max-media(425px) {
+  $breakpoint-435: 435px;
+
+  @include max-media($breakpoint-435) {
     & { text-align: center !important; }
   }
 
   button {
-    @include max-media(425px) {
-      & { width: 70px !important; }
+    @include max-media($breakpoint-435) {
+      & { width: 60px !important; }
 
       fa { display: block !important; }
 
