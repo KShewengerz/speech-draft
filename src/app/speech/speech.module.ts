@@ -13,7 +13,6 @@ import { SubmitSpeechComponent } from '@app/speech/containers/submit-speech/subm
 import { SearchSpeechComponent } from '@app/speech/containers/search-speech/search-speech.component';
 
 // Components
-import { SpeechTableListComponent } from '@app/speech/components/speech-table-list/speech-table-list.component';
 import { SpeechFormComponent } from '@app/speech/components/speech-form/speech-form.component';
 import { SpeechSubFieldsComponent } from '@app/speech/components/speech-sub-fields/speech-sub-fields.component';
 
@@ -27,7 +26,6 @@ import { SpeechSubFieldsComponent } from '@app/speech/components/speech-sub-fiel
     SubmitSpeechComponent,
     SearchSpeechComponent,
     // Components
-    SpeechTableListComponent,
     SpeechFormComponent,
     SpeechSubFieldsComponent
   ],

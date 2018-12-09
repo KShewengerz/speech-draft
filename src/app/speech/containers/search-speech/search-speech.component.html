@@ -1,3 +1,33 @@
-<p>
-  search-speech works!
-</p>
+<div class="container-fluid px-0">
+
+  <app-speech-sub-fields></app-speech-sub-fields>
+
+  <div *ngIf="speeches"
+       class="table-responsive-sm mt-5 px-3">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th *ngFor="let key of keys(speeches[0])"
+              scope="col">{{ key }}</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let speech of speeches">
+          <th scope="row"
+              data-label="ID">{{ speech.id }}</th>
+          <td data-label="Title">{{ speech.title }}</td>
+          <td data-label="Author">{{ speech.author }}</td>
+          <td data-label="Keywords">{{ speech.keywords }}</td>
+          <td data-label="Date">{{ speech.date | date: 'mediumDate' }}</td>
+          <td data-label="Actions">
+            <fa *ngFor="let icon of icons"
+                [name]="icon"
+                class="pr-2"></fa>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div><!-- END .table-responsive-sm -->
+
+</div><!-- END .container-fluid -->

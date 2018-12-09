@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { BsDatepickerConfig } from 'ngx-bootstrap';
+
 
 import { Speech } from '@app/speech/models/speech.interface';
 
@@ -14,12 +14,8 @@ export class SpeechFormComponent implements OnInit {
 
   @Input() speech: Speech;
   
-  datepickerConfig: Partial<BsDatepickerConfig> = new BsDatepickerConfig();
-  
   constructor() { }
 
-  ngOnInit() {
-    this.datepickerConfig = Object.assign({}, { containerClass: 'theme-red' });
-  }
+  ngOnInit() {}
 
 }

@@ -21,7 +21,7 @@ export class SpeechService {
         date: new Date('12/07/2018')
       },
       {
-        id: 1,
+        id: 2,
         title: 'Speech 2',
         content: 'This is Speech 2',
         author: 'John Doe',
@@ -29,7 +29,7 @@ export class SpeechService {
         date: new Date('12/08/2018')
       },
       {
-        id: 1,
+        id: 3,
         title: 'Speech 3',
         content: 'This is Speech 3',
         author: 'Todd Wheel',

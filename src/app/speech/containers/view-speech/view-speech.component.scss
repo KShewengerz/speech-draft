@@ -22,11 +22,9 @@
   li { padding: 10px; }
 
   li.active {
-    $base: #ffefef;
-
-    color: color-yiq($base);
+    color: color-yiq($light-primary);
     font-weight: bold;
-    background: $base;
+    background: $light-primary;
   }
 }
 
