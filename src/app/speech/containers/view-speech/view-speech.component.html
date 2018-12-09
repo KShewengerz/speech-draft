@@ -15,12 +15,12 @@
         <option *ngFor="let speech of speeches"
                 [value]="speech.id">{{ speech.title }}</option>
       </select>
-    </div>
+    </div><!-- END .tabs -->
 
     <!-- SPEECH FORM -->
     <div class="col-lg-8 col-md-12">
       <app-speech-form [speech]="selectedSpeech"></app-speech-form>
-    </div>
+    </div><!-- END .col-lg-8 col-md-12 -->
 
-  </div>
-</div>
+  </div><!-- END .row -->
+</div><!-- END .container-fluid -->

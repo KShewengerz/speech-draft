@@ -5,6 +5,7 @@ export interface Tab {
   active: boolean;
 }
 
+/* Tabs */
 export const tabs: Tab[] = [
   { label: 'View Speeches', icon: 'eye', url: 'view-speech', active: true },
   { label: 'Submit a Speech', icon: 'edit', url: 'submit-speech', active: false },
