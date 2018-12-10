@@ -4,7 +4,7 @@
 
 /* CONTAINER */
 .container-fluid {
-  @include max-media(425px) {
+  @include media(max-width, 425px) {
     .red-bg-border { background-color: white !important; }
 
     .height-vh-100 { height: auto !important; }
@@ -16,7 +16,11 @@
 
 /* LOGO */
 .logo {
-  @include max-media(767px) {
+  @include media(max-height, 744px) {
+    display: none !important;
+  }
+
+  @include media(max-width, 767px) {
     & { display: none !important; }
   }
 
@@ -30,7 +34,7 @@
 /* TABS */
 ::ng-deep .nav-tabs {
   .nav-link {
-    @include max-media(853px) {
+    @include media(max-width, 853px) {
       fa {
         font-size: 1.2rem;
         padding-right: 0 !important;
@@ -54,7 +58,7 @@ $breakpoint-991: 991px;
 
 /* BORDER */
 .red-bg-border {
-  @include max-media($breakpoint-991) {
+  @include media(max-width, $breakpoint-991) {
     & { height: 100vh !important; }
   }
 
@@ -64,7 +68,7 @@ $breakpoint-991: 991px;
 
 /* BOX */
 .box {
-  @include max-media($breakpoint-991) {
+  @include media(max-width, $breakpoint-991) {
     & {
       border-radius: 0 !important;
       height: auto !important;

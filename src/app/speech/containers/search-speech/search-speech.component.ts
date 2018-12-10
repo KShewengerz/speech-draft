@@ -20,7 +20,7 @@ export class SearchSpeechComponent implements OnInit {
   speeches: Speech[];
   selectedSpeech: Speech;
   
-  filters: Object;
+  filters: Object = {};
   
   constructor(private fb: FormBuilder,
               private speechService: SpeechService,
@@ -32,8 +32,8 @@ export class SearchSpeechComponent implements OnInit {
   
   loadSpeeches(): void {
     this.speechService
-    .fetchSpeeches()
-    .subscribe(speeches => this.speeches = speeches);
+      .fetchSpeeches()
+      .subscribe(speeches => this.speeches = speeches);
   }
   
   viewSpeech(speech: Speech): void {

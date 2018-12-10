@@ -1,14 +1,14 @@
 @import 'utils/mixins';
 
-$breakpoint-650: 650px;
+$breakpoint-767: 767px;
 
 /* CONTAINER */
 .container {
-  @include min-media($breakpoint-650) {
+  @include media(min-width, $breakpoint-767) {
     &, .row { height: 100% !important; }
   }
 
-  @include max-media($breakpoint-650) {
+  @include media(max-width, $breakpoint-767) {
     &, .row { height: 50% !important; }
 
     & {
@@ -21,14 +21,14 @@ $breakpoint-650: 650px;
 
 /* BOX */
 .box {
-  @include max-media(991px) {
+  @include media(max-width, 991px) {
     & {
       flex: 0 0 50% !important;
       max-width: 50% !important;
     }
   }
 
-  @include max-media($breakpoint-650) {
+  @include media(max-width, $breakpoint-767) {
     & {
       flex: unset !important;
       max-width: 100% !important;

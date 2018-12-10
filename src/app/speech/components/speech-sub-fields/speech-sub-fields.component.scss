@@ -5,7 +5,7 @@
 
 /* INPUT */
 .form-group {
-  @include max-media(767px) {
+  @include media(max-width, 767px) {
     margin-bottom: 0;
   }
 }

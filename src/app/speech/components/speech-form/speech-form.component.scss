@@ -6,7 +6,7 @@
 $breakpoint-991: 991px;
 
 .container-fluid {
-  @include max-media($breakpoint-991) {
+  @include media(max-width, $breakpoint-991) {
     & { padding: 0; }
   }
 }
@@ -18,12 +18,12 @@ $breakpoint-991: 991px;
 .buttons {
   $breakpoint-435: 435px;
 
-  @include max-media($breakpoint-435) {
+  @include media(max-width, $breakpoint-435) {
     & { text-align: center !important; }
   }
 
   button {
-    @include max-media($breakpoint-435) {
+    @include media(max-width, $breakpoint-435) {
       & { width: 60px !important; }
 
       fa { display: block !important; }

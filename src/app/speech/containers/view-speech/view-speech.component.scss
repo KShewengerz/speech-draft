@@ -22,7 +22,7 @@
   overflow-y: scroll;
 
   select {
-    @include max-media(991px) {
+    @include media(max-width, 991px) {
       & { display: block !important; }
     }
 
@@ -30,7 +30,7 @@
   }
 
   ul {
-    @include max-media(991px) {
+    @include media(max-width, 991px) {
       & { display: none; }
     }
   }
