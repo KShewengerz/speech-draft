@@ -1,4 +1,4 @@
-<small *ngIf="checkFieldRequiredError()"
+<small [style.visibility]="checkFieldRequiredError() ? 'visible': 'hidden'"
        class="text-danger capital-case">
   <i>{{ name }} is required</i>
 </small>
