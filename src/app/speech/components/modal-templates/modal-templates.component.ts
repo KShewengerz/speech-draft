@@ -1,4 +1,4 @@
-import { Component, Input, AfterViewInit, ViewChild, TemplateRef, Output, EventEmitter } from '@angular/core';
+import { Component, Input, AfterViewInit, TemplateRef, Output, EventEmitter, ViewChildren, QueryList } from '@angular/core';
 
 import { BsModalRef } from 'ngx-bootstrap';
 
@@ -21,18 +21,14 @@ export class ModalTemplatesComponent implements AfterViewInit {
   
   @Output() deleteSpeech: EventEmitter<number> = new EventEmitter<number>();
   
-  @ViewChild('delete', { read: TemplateRef }) deleteTemplate: TemplateRef<any>;
-  @ViewChild('share', { read: TemplateRef }) shareTemplate: TemplateRef<any>;
-  @ViewChild('success', { read: TemplateRef }) successTemplate: TemplateRef<any>;
-  @ViewChild('view', { read: TemplateRef }) viewTemplate: TemplateRef<any>;
+  @ViewChildren(TemplateRef) templates: QueryList<TemplateRef<any>>;
   
   constructor(private modalService: ModalService) {}
   
   ngAfterViewInit(): void {
-    this.modalService.templates.set('delete', this.deleteTemplate);
-    this.modalService.templates.set('share', this.shareTemplate);
-    this.modalService.templates.set('success', this.successTemplate);
-    this.modalService.templates.set('view', this.viewTemplate);
+    const templateKeys = ['delete', 'share', 'success', 'view'];
+    
+    this.templates.forEach((template, index) => this.modalService.templates.set(templateKeys[index], template));
   }
   
   onDeleteSpeech(id: number): void {
