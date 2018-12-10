@@ -24,6 +24,7 @@ export class ModalTemplateComponent implements AfterViewInit {
   @ViewChild('delete', { read: TemplateRef }) deleteTemplate: TemplateRef<any>;
   @ViewChild('share', { read: TemplateRef }) shareTemplate: TemplateRef<any>;
   @ViewChild('success', { read: TemplateRef }) successTemplate: TemplateRef<any>;
+  @ViewChild('view', { read: TemplateRef }) viewTemplate: TemplateRef<any>;
   
   constructor(private modalService: ModalService) {}
   
@@ -31,6 +32,7 @@ export class ModalTemplateComponent implements AfterViewInit {
     this.modalService.templates.set('delete', this.deleteTemplate);
     this.modalService.templates.set('share', this.shareTemplate);
     this.modalService.templates.set('success', this.successTemplate);
+    this.modalService.templates.set('view', this.viewTemplate);
   }
   
   onDeleteSpeech(id: number): void {

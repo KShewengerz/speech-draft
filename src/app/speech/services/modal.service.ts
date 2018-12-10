@@ -13,7 +13,9 @@ export class ModalService {
   
   showModal(type: string): void {
     const template = this.templates.get(type);
-    this.modalRef  = this.bsModalService.show(template, { class: `modal-md modal-dialog-centered` });
+    const size     = type === 'view' ? 'lg' : 'md';
+    
+    this.modalRef  = this.bsModalService.show(template, { class: `modal-${size} modal-dialog-centered` });
   }
   
   hideModal(): void {

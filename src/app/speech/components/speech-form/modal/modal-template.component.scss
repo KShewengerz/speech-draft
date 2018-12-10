@@ -17,5 +17,13 @@
 
     strong { font-size: 25px; }
   }
+}
 
+/* VIEW TEMPLATE */
+pre { white-space: pre-wrap; }
+
+span.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
 }

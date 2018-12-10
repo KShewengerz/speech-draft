@@ -35,7 +35,8 @@ export class SearchSpeechComponent implements OnInit {
   }
   
   viewSpeech(speech: Speech): void {
-    console.log('view');
+    this.selectedSpeech = speech;
+    this.modalService.showModal('view');
   }
   
   deleteSpeech(speech: Speech): void {

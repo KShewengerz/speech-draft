@@ -60,3 +60,13 @@
 
   </div><!-- END .modal-body -->
 </ng-template>
+
+<!-- VIEW TEMPLATE -->
+<ng-template #view>
+  <div class="modal-body text-center">
+    <span class="close pull-right cursor-pointer"
+          (click)="closeModal()">&times;</span>
+
+    <pre class="text-left">{{ speech.content }}</pre>
+  </div><!-- END .modal-body -->
+</ng-template>
