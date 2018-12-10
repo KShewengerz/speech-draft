@@ -10,4 +10,4 @@ app.listen(port);
 
 app.get("/*", (req, res) => res.sendFile(path.join(`${__dirname}/dist/index.html`)));
 
-console.log(`Listening to port ${port}`);
+console.log("Console listening");
