@@ -1,8 +1,15 @@
+@import 'utils/mixins';
 
 /* HOST */
 :host { width: 100%; }
 
 /* INPUT */
+.form-group {
+  @include max-media(767px) {
+    margin-bottom: 0;
+  }
+}
+
 input {
   font-size: 12px !important;
   color: black;
