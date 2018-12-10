@@ -2,6 +2,7 @@
 @import 'typography.scss';
 
 
+/* Global */
 * {
   margin: 0;
   padding: 0;
@@ -17,9 +18,10 @@ body {
 ul, li { list-style-type: none; }
 
 
-/* Cursor  */
+/* Custom */
 .cursor-pointer { cursor: pointer; }
-
 
 /* Dimensions */
 .height-vh-100 { height: 100vh; }
+
+.capital-case { text-transform: capitalize; }

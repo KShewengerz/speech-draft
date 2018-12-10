@@ -9,6 +9,9 @@
                   cols="30"
                   rows="10"
                   formControlName="content"></textarea>
+
+        <app-error-field-message [form]="form"
+                                 [name]="'content'"></app-error-field-message>
       </div><!-- END .col-md-12 -->
 
       <!-- SPEECH FORM SUB FIELDS -->
@@ -26,6 +29,7 @@
 
         <!-- SAVE -->
         <button class="btn btn-primary mr-2"
+                [disabled]="form.invalid"
                 (click)="onSaveSpeech(form.value)">
           <span>Save</span>
           <fa name="save"></fa>
@@ -44,6 +48,7 @@
 
   </form>
 </div><!-- END .container -->
+
 
 <!-- MODAL TEMPLATE -->
 <app-modal-template [speech]="speech"

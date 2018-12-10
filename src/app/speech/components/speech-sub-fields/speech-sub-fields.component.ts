@@ -3,6 +3,8 @@ import { FormGroup } from '@angular/forms';
 
 import { BsDatepickerConfig } from 'ngx-bootstrap';
 
+import { SubFields, fields } from '@app/speech/components/speech-sub-fields/speech-sub-fields.data';
+
 
 @Component({
   selector    : 'app-speech-sub-fields',
@@ -11,6 +13,7 @@ import { BsDatepickerConfig } from 'ngx-bootstrap';
 })
 export class SpeechSubFieldsComponent implements OnInit {
   
+  fields: SubFields[] = fields;
   datepickerConfig: Partial<BsDatepickerConfig> = new BsDatepickerConfig();
   
   @Input() form: FormGroup;

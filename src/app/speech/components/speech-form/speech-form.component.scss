@@ -10,6 +10,8 @@ $breakpoint-991: 991px;
   }
 }
 
+/* FORM CONTROL*/
+.form-control.ng-touched.ng-invalid { border: 1px solid #f18797; }
 
 /* BUTTONS */
 .buttons {
