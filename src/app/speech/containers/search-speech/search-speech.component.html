@@ -21,9 +21,17 @@
           <td data-label="Keywords">{{ speech.keywords }}</td>
           <td data-label="Date">{{ speech.date | date: 'mediumDate' }}</td>
           <td data-label="Actions">
-            <fa *ngFor="let icon of icons"
-                [name]="icon"
-                class="pr-2"></fa>
+            <fa name="trash"
+                class="pr-2"
+                (click)="deleteSpeech(speech)"></fa>
+
+            <fa name="file"
+                class="pr-2"
+                (click)="viewSpeech(speech)"></fa>
+
+            <fa name="share"
+                class="pr-2"
+                (click)="shareSpeech(speech)"></fa>
           </td>
         </tr>
       </tbody>
@@ -31,3 +39,7 @@
   </div><!-- END .table-responsive-sm -->
 
 </div><!-- END .container-fluid -->
+
+<!-- MODAL TEMPLATES -->
+<app-modal-template [speech]="selectedSpeech"
+                    (deleteSpeech)="onSpeechDelete($event)"></app-modal-template>

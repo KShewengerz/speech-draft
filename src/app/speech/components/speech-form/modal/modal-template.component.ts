@@ -38,7 +38,7 @@ export class ModalTemplateComponent implements AfterViewInit {
   }
   
   onShareSpeech(id: number, emailAddress: string): void {
-    console.log(id, emailAddress);
+    this.emailAddress = '';
     this.closeModal();
   }
   
