@@ -1,7 +1,5 @@
 import { Component, Input, AfterViewInit, TemplateRef, Output, EventEmitter, ViewChildren, QueryList } from '@angular/core';
 
-import { BsModalRef } from 'ngx-bootstrap';
-
 import { Speech } from '@app/speech/models/speech.interface';
 
 import { ModalService } from '@app/speech/services/modal.service';
@@ -17,7 +15,6 @@ export class ModalTemplatesComponent implements AfterViewInit {
   emailAddress: string;
   
   @Input() speech: Speech;
-  @Input() modalRef: BsModalRef;
   
   @Output() deleteSpeech: EventEmitter<number> = new EventEmitter<number>();
   
