@@ -8,11 +8,11 @@ import { ModalService } from '@app/speech/services/modal.service';
 
 
 @Component({
-  selector    : 'app-modal-template',
-  templateUrl : './modal-template.component.html',
-  styleUrls   : ['./modal-template.component.scss']
+  selector    : 'app-modal-templates',
+  templateUrl : './modal-templates.component.html',
+  styleUrls   : ['./modal-templates.component.scss']
 })
-export class ModalTemplateComponent implements AfterViewInit {
+export class ModalTemplatesComponent implements AfterViewInit {
   
   emailAddress: string;
   

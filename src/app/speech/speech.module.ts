@@ -16,7 +16,7 @@ import { SearchSpeechComponent } from '@app/speech/containers/search-speech/sear
 // Components
 import { SpeechFormComponent } from '@app/speech/components/speech-form/speech-form.component';
 import { SpeechSubFieldsComponent } from '@app/speech/components/speech-sub-fields/speech-sub-fields.component';
-import { ModalTemplateComponent } from '@app/speech/components/speech-form/modal/modal-template.component';
+import { ModalTemplatesComponent } from '@app/speech/components/modal-templates/modal-templates.component';
 import { ErrorFieldMessageComponent } from './components/error-field-message/error-field-message.component';
 
 
@@ -31,7 +31,7 @@ import { ErrorFieldMessageComponent } from './components/error-field-message/err
     // Components
     SpeechFormComponent,
     SpeechSubFieldsComponent,
-    ModalTemplateComponent,
+    ModalTemplatesComponent,
     ErrorFieldMessageComponent
   ],
   imports: [
