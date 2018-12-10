@@ -4,12 +4,13 @@ import { BsModalRef } from 'ngx-bootstrap';
 
 import { Speech } from '@app/speech/models/speech.interface';
 
-import { ModalService } from '@app/speech/components/speech-form/modal/modal.service';
+import { ModalService } from '@app/speech/services/modal.service';
 
 
 @Component({
   selector    : 'app-modal-template',
-  templateUrl : './modal-template.component.html'
+  templateUrl : './modal-template.component.html',
+  styleUrls   : ['./modal-template.component.scss']
 })
 export class ModalTemplateComponent implements AfterViewInit {
   
@@ -22,12 +23,14 @@ export class ModalTemplateComponent implements AfterViewInit {
   
   @ViewChild('delete', { read: TemplateRef }) deleteTemplate: TemplateRef<any>;
   @ViewChild('share', { read: TemplateRef }) shareTemplate: TemplateRef<any>;
+  @ViewChild('success', { read: TemplateRef }) successTemplate: TemplateRef<any>;
   
   constructor(private modalService: ModalService) {}
   
   ngAfterViewInit(): void {
     this.modalService.templates.set('delete', this.deleteTemplate);
     this.modalService.templates.set('share', this.shareTemplate);
+    this.modalService.templates.set('success', this.successTemplate);
   }
   
   onDeleteSpeech(id: number): void {
@@ -36,7 +39,11 @@ export class ModalTemplateComponent implements AfterViewInit {
   
   onShareSpeech(id: number, emailAddress: string): void {
     console.log(id, emailAddress);
-    this.modalRef.hide();
+    this.closeModal();
+  }
+  
+  closeModal(): void {
+    this.modalService.hideModal();
   }
   
 }

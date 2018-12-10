@@ -1,0 +1,18 @@
+@import 'main';
+
+
+/* MODAL */
+.modal-body { padding: 40px; }
+
+/* SUCCESS TEMPLATE */
+#success {
+  fa {
+    font-size: 3.7rem;
+    color: $light-green;
+  }
+
+  strong {
+    top: -20px;
+    font-size: 17px;
+  }
+}

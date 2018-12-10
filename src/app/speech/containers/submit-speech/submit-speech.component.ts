@@ -1,26 +1,21 @@
-import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
-
-import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-
-import { SpeechService } from '@app/speech/speech.service';
+import { Component, OnInit } from '@angular/core';
 
 import { Speech } from '@app/speech/models/speech.interface';
+
+import { SpeechService } from '@app/speech/services/speech.service';
+import { ModalService } from '@app/speech/services/modal.service';
 
 
 @Component({
   selector    : 'app-submit-speech',
   templateUrl : './submit-speech.component.html',
-  styleUrls   : ['./submit-speech.component.scss'],
-  providers   : [ BsModalService ]
+  styleUrls   : ['./submit-speech.component.scss']
 })
 export class SubmitSpeechComponent implements OnInit {
 
   speeches: Speech[];
-  modalRef: BsModalRef;
   
-  @ViewChild('success', { read: TemplateRef }) successTemplate: TemplateRef<any>;
-  
-  constructor(private bsModalService: BsModalService,
+  constructor(private modalService: ModalService,
               private speechService: SpeechService) { }
   
   ngOnInit() {
@@ -36,11 +31,11 @@ export class SubmitSpeechComponent implements OnInit {
   onSaveSpeech(speech: Speech): void {
     this.speechService
       .saveSpeech(speech, 'add')
-      .subscribe(() => this.openModal(this.successTemplate));
+      .subscribe(() => this.openModal());
   }
   
-  openModal(template): void {
-    this.modalRef = this.bsModalService.show(template, { class: 'modal-md modal-dialog-centered' });
+  openModal(): void {
+    this.modalService.showModal('success', 'sm');
   }
 
 }

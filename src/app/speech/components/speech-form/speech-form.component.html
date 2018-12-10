@@ -19,7 +19,7 @@
         <!-- DELETE -->
         <button *ngIf="speeches?.length"
                 class="btn btn-delete mr-2"
-                (click)="openModal('delete')">
+                (click)="openModal('delete', 'md')">
           <span>Delete</span>
           <fa name="trash"></fa>
         </button>
@@ -34,7 +34,7 @@
         <!-- SHARE -->
         <button *ngIf="speeches?.length"
                 class="btn btn-primary"
-                (click)="openModal('share')">
+                (click)="openModal('share', 'md')">
           <span>Share</span>
           <fa name="share"></fa>
         </button>

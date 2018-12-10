@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 // Modules
+import { ModalModule, BsModalService } from 'ngx-bootstrap';
 import { AppRouting } from './app-routing.module';
+
 
 // Components
 import { AppComponent } from '@app/app.component';
@@ -16,9 +18,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   ],
   imports: [
     BrowserModule,
+    ModalModule.forRoot(),
     AppRouting
   ],
-  providers: [],
+  providers: [ BsModalService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

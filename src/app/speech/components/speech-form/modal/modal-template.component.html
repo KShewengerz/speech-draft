@@ -5,13 +5,14 @@
 
     <button type="button"
             class="btn btn-default mr-3"
-            (click)="modalRef.hide()">No</button>
+            (click)="closeModal()">No</button>
 
     <button type="button"
             class="btn btn-primary"
             (click)="onDeleteSpeech(speech.id)">Yes</button>
   </div><!-- END .modal-body -->
 </ng-template>
+
 
 <!-- SHARE MODAL -->
 <ng-template #share>
@@ -34,11 +35,23 @@
 
     <button type="button"
             class="btn btn-default mr-3"
-            (click)="modalRef.hide()">Cancel</button>
+            (click)="closeModal()">Cancel</button>
 
     <button type="button"
             class="btn btn-primary"
             [disabled]="email.errors?.required"
             (click)="onShareSpeech(speech.id, emailAddress)">Share</button>
+  </div><!-- END .modal-body -->
+</ng-template>
+
+
+<!-- SUCCESS TEMPLATE -->
+<ng-template #success>
+  <div class="modal-body text-center"
+       id="success">
+    <p class="my-0 d-flex flex-column">
+      <fa name="check"></fa>&nbsp;
+      <strong class="position-relative">Successfully Saved</strong>
+    </p>
   </div><!-- END .modal-body -->
 </ng-template>

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
-import { SpeechService } from '@app/speech/speech.service';
 import { Speech } from '@app/speech/models/speech.interface';
+
+import { SpeechService } from '@app/speech/services/speech.service';
 
 
 @Component({

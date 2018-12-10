@@ -1,24 +1,21 @@
 import { Component, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-
 import { Speech } from '@app/speech/models/speech.interface';
-import { ModalService } from '@app/speech/components/speech-form/modal/modal.service';
+
+import { ModalService } from '@app/speech/services/modal.service';
 
 
 @Component({
   selector    : 'app-speech-form',
   templateUrl : './speech-form.component.html',
-  styleUrls   : ['./speech-form.component.scss'],
-  providers   : [ BsModalService ]
+  styleUrls   : ['./speech-form.component.scss']
 })
 export class SpeechFormComponent implements OnChanges {
   
   form: FormGroup = this.fb.group(this.formFields);
   
   speech: Speech;
-  modalRef: BsModalRef;
   
   @Input() speeches: Speech[];
   
@@ -35,7 +32,6 @@ export class SpeechFormComponent implements OnChanges {
   @Output() saveSpeech: EventEmitter<Speech> = new EventEmitter<Speech>();
   
   constructor(private fb: FormBuilder,
-              private bsModalService: BsModalService,
               private modalService: ModalService) { }
               
   ngOnChanges(): void {
@@ -58,14 +54,13 @@ export class SpeechFormComponent implements OnChanges {
      this.form.setValue({ content, author, keywords, date });
   }
   
-  openModal(type: string) {
-    const template = this.modalService.templates.get(type);
-    this.modalRef = this.bsModalService.show(template, { class: 'modal-md modal-dialog-centered' });
+  openModal(type: string, size: string) {
+    this.modalService.showModal(type, size);
   }
   
   onDeleteSpeech(id: number): void {
      this.deleteSpeech.emit(id);
-     this.modalRef.hide();
+     this.modalService.hideModal();
   }
   
   onSaveSpeech(body: Speech): void {

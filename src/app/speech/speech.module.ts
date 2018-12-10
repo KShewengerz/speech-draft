@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Modules
-import { TabsModule, BsDatepickerModule, ModalModule } from 'ngx-bootstrap';
+import { TabsModule, BsDatepickerModule } from 'ngx-bootstrap';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { SpeechRouting } from '@app/speech/speech-routing.module';
 
@@ -38,9 +38,9 @@ import { ModalTemplateComponent } from '@app/speech/components/speech-form/modal
     ReactiveFormsModule,
     TabsModule.forRoot(),
     BsDatepickerModule.forRoot(),
-    ModalModule.forRoot(),
     AngularFontAwesomeModule,
     SpeechRouting
-  ]
+  ],
+  providers: [ ]
 })
 export class SpeechModule {}
