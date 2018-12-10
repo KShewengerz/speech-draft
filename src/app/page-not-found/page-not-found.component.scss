@@ -1,0 +1,13 @@
+/* ROW */
+.row {
+  height: 100vh;
+
+  .col-md-8 {
+    background: #e4515b;
+    padding: 50px;
+    border-radius: 10px;
+    color: white;
+
+    h1 { font-size: 5rem; }
+  }
+}
