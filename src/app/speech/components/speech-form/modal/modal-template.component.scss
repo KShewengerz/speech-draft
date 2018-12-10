@@ -7,12 +7,15 @@
 /* SUCCESS TEMPLATE */
 #success {
   fa {
-    font-size: 3.7rem;
+    font-size: 4.5rem;
+    margin-top: -5px;
     color: $light-green;
   }
 
-  strong {
-    top: -20px;
-    font-size: 17px;
+  span {
+    top: -25px;
+
+    strong { font-size: 25px; }
   }
+
 }

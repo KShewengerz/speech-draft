@@ -1,7 +1,7 @@
 <!-- DELETE MODAL -->
 <ng-template #delete>
   <div class="modal-body text-center">
-    <p>Are you sure you want to delete <strong class="text-primary">{{speech?.title}}</strong> ?</p>
+    <p class="mb-4">Are you sure you want to delete <strong class="text-primary">{{speech?.title}}</strong> ?</p>
 
     <button type="button"
             class="btn btn-default mr-3"
@@ -17,7 +17,7 @@
 <!-- SHARE MODAL -->
 <ng-template #share>
   <div class="modal-body text-center">
-    <p>Share <strong class="text-primary">{{speech?.title}}</strong> to your teammate:</p>
+    <p class="mb-4">Share <strong class="text-primary">{{speech?.title}}</strong> to your teammate:</p>
 
     <div class="form-group mb-4">
       <input type="email"
@@ -51,7 +51,12 @@
        id="success">
     <p class="my-0 d-flex flex-column">
       <fa name="check"></fa>&nbsp;
-      <strong class="position-relative">Successfully Saved</strong>
+
+      <span class="d-flex flex-column position-relative">
+        <strong>Success!</strong>
+        Your speech has now been saved.
+      </span>
     </p>
+
   </div><!-- END .modal-body -->
 </ng-template>

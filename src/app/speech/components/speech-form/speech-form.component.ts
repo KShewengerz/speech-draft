@@ -54,8 +54,8 @@ export class SpeechFormComponent implements OnChanges {
      this.form.setValue({ content, author, keywords, date });
   }
   
-  openModal(type: string, size: string) {
-    this.modalService.showModal(type, size);
+  openModal(type: string) {
+    this.modalService.showModal(type);
   }
   
   onDeleteSpeech(id: number): void {
@@ -66,6 +66,8 @@ export class SpeechFormComponent implements OnChanges {
   onSaveSpeech(body: Speech): void {
     body.id    = this.speech ? this.speech.id : this.speeches[this.speeches.length - 1].id + 1;
     body.title = this.speech ? this.speech.title : `Speech ${body.id}`;
+  
+    if (!this.speech) this.form.reset();
     
     this.saveSpeech.emit(body);
   }

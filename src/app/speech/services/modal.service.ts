@@ -11,9 +11,9 @@ export class ModalService {
   
   constructor(private bsModalService: BsModalService) {}
   
-  showModal(type: string, size: string): void {
+  showModal(type: string): void {
     const template = this.templates.get(type);
-    this.modalRef  = this.bsModalService.show(template, { class: `modal-${size} modal-dialog-centered` });
+    this.modalRef  = this.bsModalService.show(template, { class: `modal-md modal-dialog-centered` });
   }
   
   hideModal(): void {

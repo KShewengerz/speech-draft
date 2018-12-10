@@ -35,7 +35,7 @@ export class SubmitSpeechComponent implements OnInit {
   }
   
   openModal(): void {
-    this.modalService.showModal('success', 'sm');
+    this.modalService.showModal('success');
   }
 
 }

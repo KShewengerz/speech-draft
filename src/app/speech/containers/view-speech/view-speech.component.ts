@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Speech } from '@app/speech/models/speech.interface';
 
 import { SpeechService } from '@app/speech/services/speech.service';
+import { ModalService } from '@app/speech/services/modal.service';
 
 
 @Component({
@@ -17,7 +18,8 @@ export class ViewSpeechComponent implements OnInit {
   selectedSpeech: Speech;
 
   constructor(private router: Router,
-              private speechService: SpeechService) { }
+              private speechService: SpeechService,
+              private modalService: ModalService) { }
 
   ngOnInit() {
     this.loadSpeeches();
@@ -41,7 +43,7 @@ export class ViewSpeechComponent implements OnInit {
   onSaveSpeech(speech: Speech): void {
     this.speechService
       .saveSpeech(speech)
-      .subscribe(isAdd => isAdd ? this.selectedSpeech = this.speeches[this.speeches.length - 1] : null);
+      .subscribe(isAdd => this.modalService.showModal('success'));
   }
 
 }
