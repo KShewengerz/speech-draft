@@ -19,7 +19,7 @@
         <!-- TABS -->
         <tabset [justified]="true">
           <tab *ngFor="let tab of speechTabs"
-               [active]="tab.active"
+               [active]="tabset"
                (select)="router.navigate(['speech', tab.url])">
             <ng-template tabHeading>
               <fa class="pr-2 cursor-pointer"

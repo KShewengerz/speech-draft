@@ -5,14 +5,13 @@ export interface Tab {
   label: string;
   icon: string;
   url: string;
-  active: boolean;
 }
 
 /* TABS */
 export const tabs: Tab[] = [
-  { id: 1, label: 'View Speeches', icon: 'eye', url: 'view-speech', active: false },
-  { id: 2, label: 'Submit a Speech', icon: 'edit', url: 'submit-speech', active: false },
-  { id: 3, label: 'Search Speeches', icon: 'search', url: 'search-speech', active: false },
+  { id: 1, label: 'View Speeches', icon: 'eye', url: 'view-speech' },
+  { id: 2, label: 'Submit a Speech', icon: 'edit', url: 'submit-speech' },
+  { id: 3, label: 'Search Speeches', icon: 'search', url: 'search-speech' },
 ];
 
 /* SPEECHES */
