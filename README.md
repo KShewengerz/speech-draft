@@ -9,11 +9,11 @@
 #### How to run
 ```
 $ npm install           - Installs all dependencies from package.json
-$ npm ng:start          - Runs angular at http://localhost:8080
+$ npm run ng:start      - Runs angular at http://localhost:4200
 ```
 
 #### Live Demo
 ```
-Deployed Application at Heroku
+Deployed Application to Heroku
 http://speech-draft.herokuapp.com/
 ```
