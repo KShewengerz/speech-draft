@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Modules
@@ -18,6 +18,7 @@ import { SpeechFormComponent } from '@app/speech/components/speech-form/speech-f
 import { SpeechSubFieldsComponent } from '@app/speech/components/speech-sub-fields/speech-sub-fields.component';
 import { ModalTemplatesComponent } from '@app/speech/components/modal-templates/modal-templates.component';
 import { ErrorFieldMessageComponent } from './components/error-field-message/error-field-message.component';
+import { TableFilterPipe } from './containers/search-speech/table-filter.pipe';
 
 
 
@@ -32,7 +33,8 @@ import { ErrorFieldMessageComponent } from './components/error-field-message/err
     SpeechFormComponent,
     SpeechSubFieldsComponent,
     ModalTemplatesComponent,
-    ErrorFieldMessageComponent
+    ErrorFieldMessageComponent,
+    TableFilterPipe
   ],
   imports: [
     CommonModule,
@@ -43,6 +45,6 @@ import { ErrorFieldMessageComponent } from './components/error-field-message/err
     AngularFontAwesomeModule,
     SpeechRouting
   ],
-  providers: [ ]
+  providers: [ DatePipe ]
 })
 export class SpeechModule {}

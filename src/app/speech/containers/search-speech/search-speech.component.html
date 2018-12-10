@@ -1,6 +1,8 @@
 <div class="container-fluid px-0">
 
-  <app-speech-sub-fields [form]="form"></app-speech-sub-fields>
+  <app-speech-sub-fields [form]="form"
+                         [isSearchSpeechMode]="true"
+                         (filters)="filters = $event"></app-speech-sub-fields>
 
   <div *ngIf="speeches"
        class="table-responsive-sm mt-5 px-3">
@@ -13,7 +15,7 @@
       </thead>
 
       <tbody>
-        <tr *ngFor="let speech of speeches">
+        <tr *ngFor="let speech of speeches | tableFilter: filters">
           <th scope="row"
               data-label="ID">{{ speech.id }}</th>
           <td data-label="Title">{{ speech.title }}</td>

@@ -14,11 +14,13 @@ import { ModalService } from '@app/speech/services/modal.service';
 })
 export class SearchSpeechComponent implements OnInit {
   
-  form: FormGroup = this.fb.group({ author: '', keywords: '', date: new Date() });
+  form: FormGroup = this.fb.group({ author: '', keywords: '', date: '' });
   
   speechKeys: string[] = ['Id', 'Title', 'Author', 'Keywords', 'Date', ''];
   speeches: Speech[];
   selectedSpeech: Speech;
+  
+  filters: Object;
   
   constructor(private fb: FormBuilder,
               private speechService: SpeechService,

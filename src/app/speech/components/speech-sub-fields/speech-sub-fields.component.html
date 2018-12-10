@@ -12,7 +12,8 @@
                  type="text"
                  class="form-control"
                  [placeholder]="field.placeholder"
-                 [formControlName]="field.control">
+                 [formControlName]="field.control"
+                 (input)="onFieldValueChange($event.target.value, field.control)">
 
 
           <input *ngIf="field.control === 'date'"
@@ -22,7 +23,8 @@
                  bsDatepicker
                  [bsConfig]="datepickerConfig"
                  placement="top"
-                 formControlName="date">
+                 formControlName="date"
+                 (bsValueChange)="onFieldValueChange($event, field.control)">
 
           <app-error-field-message [form]="form"
                                    [name]="field.control"></app-error-field-message>
