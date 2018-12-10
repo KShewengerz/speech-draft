@@ -17,6 +17,8 @@
 /* TABS */
 .tabs {
   padding: 0 17px;
+  max-height: 400px;
+  overflow-y: scroll;
 
   select {
     @include max-media(991px) {

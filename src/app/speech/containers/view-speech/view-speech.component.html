@@ -1,5 +1,6 @@
 <div class="container-fluid">
 
+  <!-- EMPTY SPEECH MESSAGE -->
   <p *ngIf="!speeches?.length"
      class="d-flex justify-content-center align-items-center flex-column empty-message text-secondary">
     <span>No speeches created yet.</span>&nbsp;
@@ -9,6 +10,7 @@
     </span>
   </p>
 
+  <!-- SPEECH LIST AND FORM -->
   <div *ngIf="speeches?.length"
        class="row">
 
@@ -21,9 +23,10 @@
             (click)="selectedSpeech = speech">{{ speech.title }}</li>
       </ul>
 
-      <select class="custom-select form-control mb-4">
+      <select class="custom-select form-control mb-4"
+              [(ngModel)]="selectedSpeech">
         <option *ngFor="let speech of speeches"
-                [value]="speech.id">{{ speech.title }}</option>
+                [ngValue]="speech">{{ speech.title }}</option>
       </select>
     </div><!-- END .tabs -->
 
