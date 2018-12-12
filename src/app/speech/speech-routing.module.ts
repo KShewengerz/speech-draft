@@ -25,7 +25,5 @@ const routes: Routes = [
 
 /**
  * A variable that exports speech's child routes
- *
- * @type {RouterModule}
  */
-export const SpeechRouting: RouterModule = RouterModule.forChild(routes);
+export const SpeechRouting = RouterModule.forChild(routes);

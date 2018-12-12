@@ -53,7 +53,7 @@ export class SubmitSpeechComponent implements OnInit {
    */
   onSaveSpeech(speech: Speech): void {
     this.speechService
-      .saveSpeech(speech, 'add')
+      .saveSpeech(speech)
       .subscribe(() => this.modalService.showModal('success'));
   }
 

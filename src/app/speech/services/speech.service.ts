@@ -49,9 +49,9 @@ export class SpeechService {
    * user based on the provided speech param otherwise it will create a new speech.
    *
    * @param {Speech} speech - the speech data
-   * @returns {Observable<boolean>>}
+   * @returns {Observable<string>>}
    */
-  saveSpeech(speech: Speech): Observable<boolean> {
+  saveSpeech(speech: Speech): Observable<string> {
     const compare  = item => item.id === speech.id;
     const isExists = this.list.some(compare);
     

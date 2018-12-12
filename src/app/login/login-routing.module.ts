@@ -14,7 +14,5 @@ const routes: Routes = [
 
 /**
  * A variable that exports login's child routes
- *
- * @type {RouterModule}
  */
-export const LoginRouting: RouterModule = RouterModule.forChild(routes);
+export const LoginRouting = RouterModule.forChild(routes);

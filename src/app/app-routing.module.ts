@@ -16,7 +16,5 @@ const routes: Routes = [
 
 /**
  * A variable that exports app's root routes and disable using hash on url suffixes.
- *
- * @type {RouterModule}
  */
-export const AppRouting: RouterModule = RouterModule.forRoot(routes, { useHash: false });
+export const AppRouting = RouterModule.forRoot(routes, { useHash: false });
