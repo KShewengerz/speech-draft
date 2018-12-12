@@ -1,3 +1,6 @@
+/**
+ * An interface for Speech properties
+ */
 export interface Speech {
   id?: number;
   title?: string;

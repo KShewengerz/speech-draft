@@ -6,6 +6,11 @@ import { SubmitSpeechComponent } from './containers/submit-speech/submit-speech.
 import { SearchSpeechComponent } from './containers/search-speech/search-speech.component';
 
 
+/**
+ * A variable that contains the speech routes. Each routes that aren't empty are served as a router link of each speech main tabs
+ *
+ * @type {Routes}
+ */
 const routes: Routes = [
   { path: '',
     component: SpeechComponent,
@@ -18,4 +23,9 @@ const routes: Routes = [
   }
 ];
 
-export const SpeechRouting = RouterModule.forChild(routes);
+/**
+ * A variable that exports speech's child routes
+ *
+ * @type {RouterModule}
+ */
+export const SpeechRouting: RouterModule = RouterModule.forChild(routes);

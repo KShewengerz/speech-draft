@@ -1,7 +1,11 @@
 import { FormlyFieldConfig } from '@ngx-formly/core';
 
 
-/* SIGN IN FORM FIELDS */
+/**
+ * A variable that contains the sign-in form fields following the properties required under FormlyFieldConfig from ngx-formly
+ *
+ * @type {FormlyFieldConfig[]}
+ */
 export const loginFormFields: FormlyFieldConfig[] = [
   {
     key: 'username',
