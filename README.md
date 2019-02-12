@@ -1,6 +1,7 @@
 # speech-draft-app
- An Angular 7 and Bootstrap 4 application that features user's speech draft activity (CRUD).
+> An Angular 7 and Bootstrap 4 application that features user's speech draft activity (CRUD).
 
+![speech-draft](./src/assets/images/speech-draft.gif)
 
 #### Main dev tools used:
 `Angular 7` `Angular CLI` `Bootstrap 4` `NGX-Bootstrap` `Typescript` `Compodoc` `ES3` `NGX-Formly`
